@@ -1,16 +1,23 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Home from '@/components/Home'
+import Register from '@/components/Register'
+import Login from '@/components/Login'
 
 Vue.use(Router)
 Vue.use(Vuex)
-export default new Router({
+const router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
+      name: 'Home',
+      component: Home
+    },
+    { path: '/register', component: Register },
+    { path: '/login', component: Login }
   ]
 })
+
+export default router
